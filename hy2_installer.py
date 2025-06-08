@@ -141,7 +141,7 @@ def install_hysteria(args):
         
         print("[*] 正在安装 acme.sh...")
         acme_install_cmd = "curl https://get.acme.sh | sh -s email=my@example.com"
-        run_command(acme_install_cmd, shell=True) # 使用 shell=True 执行字符串命令
+        run_command([acme_install_cmd], shell=True) # 使用 shell=True 执行字符串命令
 
         acme_sh_path = os.path.expanduser("~/.acme.sh/acme.sh")
         if not os.path.exists(acme_sh_path):
