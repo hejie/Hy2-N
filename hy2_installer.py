@@ -124,7 +124,12 @@ def install_hysteria(args):
     else:
         print(f"[*] 为域名 {domain} 申请 Let's Encrypt 证书...")
         run_command(["apt-get", "install", "-y", "cron"])
-        run_command(["curl", "https://get.acme.sh", "|", "sh"], check=False)
+         # ==================== FIX STARTS HERE ====================
+        # 使用 shell=True 来正确执行 acme.sh 安装脚本的管道命令
+        print("[*] 正在安装 acme.sh...")
+        acme_install_cmd = "curl https://get.acme.sh | sh -s email=my@example.com"
+        run_command(acme_install_cmd, shell=True)
+        # ===================== FIX ENDS HERE =====================
         acme_sh_path = os.path.expanduser("~/.acme.sh/acme.sh")
         print("[*] 临时开放 80 端口用于 Let's Encrypt 验证...")
         run_command(["ufw", "allow", "80/tcp"])
