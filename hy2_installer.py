@@ -11,7 +11,7 @@ import requests
 
 # --- 脚本元数据 ---
 # 假设你的脚本托管在 'https://raw.githubusercontent.com/your_username/your_repo/main/hysteria_installer.py'
-SCRIPT_URL = "https://raw.githubusercontent.com/your_username/your_repo/main/hysteria_installer.py" # <--- !! 请务必修改为你的脚本在 GitHub 上的 RAW 链接 !!
+SCRIPT_URL = "https://raw.githubusercontent.com/hejie/Hy2-N/refs/heads/main/hy2_installer.py" # <--- !! 请务必修改为你的脚本在 GitHub 上的 RAW 链接 !!
 
 # --- Hysteria 默认配置 ---
 DEFAULT_PORT = 443
