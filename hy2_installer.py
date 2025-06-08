@@ -28,7 +28,7 @@ YELLOW = '\033[1;33m'
 CYAN = '\033[1;36m'
 NC = '\033[0m' # No Color
 
-def run_command(command, check=True, text=True, capture_output=True):
+def run_command(command, check=True, text=True, capture_output=True,shell=False):
     """执行 shell 命令"""
     print(f"[*] 正在执行: {' '.join(command)}")
     try:
